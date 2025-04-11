@@ -31,7 +31,7 @@ export default async function RootLayout({
   
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-         <main className='w-screen max-w-7xl mx-auto'>
+         <main className='w-screen h-screen flex flex-col items-center justify-center'>
 
            {children}
           <Toaster />

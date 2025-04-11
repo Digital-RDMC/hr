@@ -162,11 +162,14 @@ export default function InputForm() {
   }
 
   return (
-    <div className="w-full max-w-xl px-5 mx-auto h-screen flex justify-center items-center">
-      <ScrollArea className="h-[100vh] pe-4">
+    <div className="w-full  px-5 mx-auto h-screen flex justify-center items-center">
+      <ScrollArea className="h-[100vh] pe-4 w-full">
         <div className="flex flex-col gap-0 sticky top-0 bg-background/50 z-10 py-0  w-full">
-          <div className="flex justify-between items-center gap-4 mb-0 bg-background/100 w-full py-4 my-0   border-b px-4">
+          <div className="flex justify-between items-center gap-4  bg-background/100 w-full py-4 my-0   border-b px-4">
+          
             <Logo />
+         
+           
             <div className="text-lg font-black uppercase">
               <h2>
                 Mobility <span className="font-light">Cairo</span>{" "}
@@ -176,7 +179,7 @@ export default function InputForm() {
           <div className="w-full bg-gradient-to-b from-background/100 to-background/0 h-14 py-0"></div>
         </div>
 
-        <div className="pb-[40vh]">
+        <div className="pb-[40vh] max-w-xl mx-auto">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
