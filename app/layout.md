@@ -1,7 +1,14 @@
 import type { Metadata } from 'next'
+import {
+  ClerkProvider,
+  // SignInButton,
+  // SignUpButton,
+  // SignedIn,
+  // SignedOut,
+  // UserButton,
+} from '@clerk/nextjs'
 import {checkUser } from "@/lib/checkUser"
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Toaster } from "@/components/ui/sonner"
 import './globals.css'
 
 const geistSans = Geist({
@@ -28,17 +35,21 @@ export default async function RootLayout({
   const user = await checkUser()
 
   return (
-  
+    <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-         <main className='w-screen max-w-7xl mx-auto'>
-
-           {children}
-          <Toaster />
-         </main>
-         
+          {/* <header className="flex justify-end items-center p-4 gap-4 h-16">
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header> */}
+          {children}
         </body>
       </html>
- 
+    </ClerkProvider>
   )
 }
